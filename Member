@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+public class Member {
+	private String name;
+	private int numOfHours;
+	private ArrayList<String> skills;
+	public Member(String name, int numOfHours, ArrayList<String> skills)
+	{
+		this.name = name;
+		this.numOfHours = numOfHours;
+		this.skills = skills;
+	}
+	public void addHour()
+	{
+		numOfHours++;
+	}
+	public void addHour(int hourAmount)
+	{
+		numOfHours += hourAmount;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public int getNumOfHours()
+	{
+		return numOfHours;
+	}
+	public void addSkill(String skill)
+	{
+		skills.add(skill);
+	}
+	public boolean findSkill(String skillAsked)
+	{
+		for(String skill: skills)
+		{
+			if(skill.equals(skillAsked))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+}
