@@ -29,6 +29,10 @@ public class Member {
 	{
 		skills.add(skill);
 	}
+	public int skillAmount()
+	{
+		return skills.size();
+	}
 	public boolean findSkill(String skillAsked)
 	{
 		for(String skill: skills)
