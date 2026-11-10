@@ -7,17 +7,22 @@ public class MainClockWork {
 		final int maxNumOfSkills = 5;
 		Scanner scan = new Scanner(System.in);
 		ArrayList<Member> users = new ArrayList<>();
-		ArrayList<String> skillsForUser = new ArrayList<>(Arrays.asList("Laundry", "Dishwashing", "Composting"));
-		users.add(new Member("John", 10, skillsForUser));
-		//"House Cleaning", "Deep Cleaning", "Organizing Closets", "Organizing Garages", "Laundry", "Ironing Clothes", "Dishwashing", "Furniture Assembly", "Furniture Moving", "Home Decorating", "Painting", "Minor Home Repairs", "Hanging Pictures", "Changing Light Bulbs", "Window Cleaning", "Carpet Cleaning", "Pressure Washing", "Lawn Mowing", "Weed Pulling", "Gardening", "Plant Watering", "Tree Trimming", "Hedge Trimming", "Leaf Raking", "Snow Shoveling", "Mulching", "Flower Planting", "Vegetable Gardening", "Composting", "Fence Painting", "Patio Cleaning", "Outdoor Furniture Assembly", "Dog Walking", "Pet Sitting", "Feeding Pets", "Pet Bathing", "Cleaning Pet Areas", "Playing with Pets", "Litter Box Cleaning", "Basic Pet Training", "Aquarium Cleaning", "Plant and Pet Care While Traveling", "Grocery Shopping", "Prescription Pickup", "Package Pickup", "Mail Drop-Off", "Running Errands", "Airport Drop-Off", "Local Rides", "Furniture Pickup", "Donation Drop-Off", "Shopping Assistance", "Returning Packages", "Computer Setup", "Phone Setup", "Printer Setup", "Wi-Fi Troubleshooting", "Basic Computer Lessons", "Smartphone Lessons", "TV Setup", "Smart Home Setup", "Software Installation", "Help with Email", "Photo Organization", "Social Media Assistance", "Basic Coding Lessons", "Math Tutoring", "Science Tutoring", "English Tutoring", "Reading Assistance", "Writing Assistance", "Homework Help", "Computer Tutoring", "Language Lessons", "Music Lessons", "Instrument Practice", "Study Skills", "Test Preparation", "Home Cooking", "Meal Preparation", "Baking", "Cake Decorating", "Bread Making", "Meal Planning", "Grocery Meal Prep", "Cooking Lessons", "Recipe Sharing", "Holiday Meal Preparation", "Childcare", "Babysitting", "Senior Companionship", "Reading to Seniors", "Grocery Assistance", "Appointment Companionship", "Helping with Forms", "Personal Organization", "Packing Assistance", "Unpacking Assistance", "House Sitting", "Photography", "Photo Editing", "Sewing", "Clothing Repairs", "Knitting", "Crocheting", "Jewelry Making", "Scrapbooking", "Drawing Lessons", "Painting Lessons", "Craft Projects", "Handmade Decorations", "Calligraphy", "Event Setup", "Event Cleanup", "Party Planning", "Birthday Party Assistance", "Decorating for Events", "Photography at Events", "Music Performance", "Singing", "Community Gardening", "Volunteer Coordination", "Neighborhood Cleanup", "Helping with Fundraisers", "Basic Car Maintenance", "Bicycle Repair", "Bicycle Maintenance", "Shoe Repair", "Basic Sewing", "Packing for Travel", "Moving Assistance", "Furniture Repair", "Tool Organization", "Basic First Aid Training", "Language Translation", "Resume Assistance", "Interview Preparation", "Board Game Lessons", "Chess Lessons", "Card Game Lessons", "Walking Companion", "Exercise Companion", "Sports Coaching", "Sports Practice", "Music Practice", "Book Club Hosting", "Art Lessons", "Hobby Lessons"
+		ArrayList<String> skillList = new ArrayList<>(Arrays.asList("Laundry", "Pressure Washing", "Airport Drop-Off"));
+		Member you = new Member("You", 5, skillList);
+		skillList = new ArrayList<>(Arrays.asList("Running Errands", "Party Planning", "Baking"));
+		users.add(new Member("John", 10, skillList));
+		skillList = new ArrayList<>(Arrays.asList("Window Cleaning", "Basic Computer Lessons", "Resume Assistance"));
+		users.add(new Member("Mary", 12, skillList));
+		skillList = new ArrayList<>(Arrays.asList("Lawn Mowing", "Meal Planning", "Art Lessons"));
+		users.add(new Member("Gary", 6, skillList));
+		//Skill options: "House Cleaning", "Deep Cleaning", "Organizing Closets", "Organizing Garages", "Laundry", "Ironing Clothes", "Dishwashing", "Furniture Assembly", "Furniture Moving", "Home Decorating", "Painting", "Minor Home Repairs", "Hanging Pictures", "Changing Light Bulbs", "Window Cleaning", "Carpet Cleaning", "Pressure Washing", "Lawn Mowing", "Weed Pulling", "Gardening", "Plant Watering", "Tree Trimming", "Hedge Trimming", "Leaf Raking", "Snow Shoveling", "Mulching", "Flower Planting", "Vegetable Gardening", "Composting", "Fence Painting", "Patio Cleaning", "Outdoor Furniture Assembly", "Dog Walking", "Pet Sitting", "Feeding Pets", "Pet Bathing", "Cleaning Pet Areas", "Playing with Pets", "Litter Box Cleaning", "Basic Pet Training", "Aquarium Cleaning", "Plant and Pet Care While Traveling", "Grocery Shopping", "Prescription Pickup", "Package Pickup", "Mail Drop-Off", "Running Errands", "Airport Drop-Off", "Local Rides", "Furniture Pickup", "Donation Drop-Off", "Shopping Assistance", "Returning Packages", "Computer Setup", "Phone Setup", "Printer Setup", "Wi-Fi Troubleshooting", "Basic Computer Lessons", "Smartphone Lessons", "TV Setup", "Smart Home Setup", "Software Installation", "Help with Email", "Photo Organization", "Social Media Assistance", "Basic Coding Lessons", "Math Tutoring", "Science Tutoring", "English Tutoring", "Reading Assistance", "Writing Assistance", "Homework Help", "Computer Tutoring", "Language Lessons", "Music Lessons", "Instrument Practice", "Study Skills", "Test Preparation", "Home Cooking", "Meal Preparation", "Baking", "Cake Decorating", "Bread Making", "Meal Planning", "Grocery Meal Prep", "Cooking Lessons", "Recipe Sharing", "Holiday Meal Preparation", "Childcare", "Babysitting", "Senior Companionship", "Reading to Seniors", "Grocery Assistance", "Appointment Companionship", "Helping with Forms", "Personal Organization", "Packing Assistance", "Unpacking Assistance", "House Sitting", "Photography", "Photo Editing", "Sewing", "Clothing Repairs", "Knitting", "Crocheting", "Jewelry Making", "Scrapbooking", "Drawing Lessons", "Painting Lessons", "Craft Projects", "Handmade Decorations", "Calligraphy", "Event Setup", "Event Cleanup", "Party Planning", "Birthday Party Assistance", "Decorating for Events", "Photography at Events", "Music Performance", "Singing", "Community Gardening", "Volunteer Coordination", "Neighborhood Cleanup", "Helping with Fundraisers", "Basic Car Maintenance", "Bicycle Repair", "Bicycle Maintenance", "Shoe Repair", "Basic Sewing", "Packing for Travel", "Moving Assistance", "Furniture Repair", "Tool Organization", "Basic First Aid Training", "Language Translation", "Resume Assistance", "Interview Preparation", "Board Game Lessons", "Chess Lessons", "Card Game Lessons", "Walking Companion", "Exercise Companion", "Sports Coaching", "Sports Practice", "Music Practice", "Book Club Hosting", "Art Lessons", "Hobby Lessons"
 		
 		int choice = 0;
 		int numOfSkills = 0;
-		int hours = 5;
 		System.out.println("Welcome to ClockWork!");
-		while(choice != 5)
+		while(choice != 6)
 		{
-			System.out.println("Menu options: 1. Look for helper. 2. Update skills 3. Add a user \n4. Offer services 5. Exit");
+			System.out.println("Menu options: 1. Look for helper. 2. Update skills 3. Add a user \n4. Offer services 5. Print your skills 6. Exit");
 			System.out.print("Enter your choice: ");
 			choice = scan.nextInt();
 			switch(choice)
@@ -26,7 +31,7 @@ public class MainClockWork {
 				{
 					System.out.print("How many hours will this take? ");
 					int hourAmount = scan.nextInt();
-					if(hourAmount > hours)
+					if(hourAmount > you.getNumOfHours())
 					{
 						System.out.println("Insufficient hours for the help.");
 						break;
@@ -68,7 +73,7 @@ public class MainClockWork {
 							System.out.println("User with skills requested has been found!");
 							System.out.println(user.toString());
 							System.out.println("Help has been sent!");
-							hours = hours - hourAmount;
+							you.subtractHours(hourAmount);
 							user.addHour(hourAmount);
 							userFound = true;
 						}
@@ -77,6 +82,41 @@ public class MainClockWork {
 					{
 						System.out.println("No user was found with the skills you requested.");
 					}
+					break;
+				}
+				case(2):
+				{
+					System.out.print("Are you adding or removing a skill (1 for adding 2 for removing)? ");
+					int option = scan.nextInt();
+					while(option != 1 && option != 2)
+					{
+						System.out.println("Invalid option. Try again.");
+						System.out.print("Are you adding or removing a skill (1 for adding 2 for removing)? ");
+						option = scan.nextInt();
+					}
+					scan.nextLine();
+					if(option == 1)
+					{
+						System.out.print("What skill are you adding? ");
+						String addedSkill = scan.nextLine();
+						you.addSkill(addedSkill);
+						System.out.println("Skill " + addedSkill + " was added!");
+					}
+					else if(option == 2)
+					{
+						System.out.print("What skill are you removing? ");
+						String removedSkill = scan.nextLine();
+						you.removeSkill(removedSkill);
+					}
+					else
+					{
+						System.out.println("How did we get here??");
+					}
+					break;
+				}
+				case(5):
+				{
+					System.out.println("Skills: " + you.getSkills());
 					break;
 				}
 			}
