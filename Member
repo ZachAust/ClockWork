@@ -9,10 +9,6 @@ public class Member {
 		this.numOfHours = numOfHours;
 		this.skills = skills;
 	}
-	public void addHour()
-	{
-		numOfHours++;
-	}
 	public void addHour(int hourAmount)
 	{
 		numOfHours += hourAmount;
@@ -29,13 +25,39 @@ public class Member {
 	{
 		skills.add(skill);
 	}
+	
+	public void removeSkill(String skill)
+	{
+		if(skills.indexOf(skill) == -1)
+		{
+			System.out.println("Skill was not found.");
+		}
+		else
+		{
+			skills.remove(skills.indexOf(skill));
+			System.out.println("Skill " + skill + " was removed.");
+		}
+	}
 	public int skillAmount()
 	{
 		return skills.size();
 	}
+	public void subtractHours(int hourAmount)
+	{
+		numOfHours -= hourAmount;
+	}
+	public ArrayList<String> getSkills()
+	{
+		return skills;
+	}
+	@Override
+	public String toString()
+	{
+		return "Name: " + name + "\nSkills: " + skills;
+	}
 	public boolean findSkill(String skillAsked)
 	{
-		for(String skill: skills)
+		for(String skill : skills)
 		{
 			if(skill.equals(skillAsked))
 			{
