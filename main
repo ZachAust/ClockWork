@@ -20,9 +20,9 @@ public class MainClockWork {
 		int choice = 0;
 		int numOfSkills = 0;
 		System.out.println("Welcome to ClockWork!");
-		while(choice != 6)
+		while(choice != 7)
 		{
-			System.out.println("Menu options: 1. Look for helper. 2. Update skills 3. Add a user \n4. Offer services 5. Print your skills 6. Exit");
+			System.out.println("Menu options: 1. Look for helper. 2. Update skills 3. Add a user \n4. Offer services 5. Print your skills 6. Print out all users. 7. Exit");
 			System.out.print("Enter your choice: ");
 			choice = scan.nextInt();
 			switch(choice)
@@ -185,7 +185,28 @@ public class MainClockWork {
 					System.out.println("Skills: " + you.getSkills());
 					break;
 				}
+				case(6):
+				{
+					System.out.println("List of all Users:");
+					System.out.println(you);
+					for(Member user : users)
+					{
+						System.out.println(user);
+					}
+					break;
+				}
+				case(7):
+				{
+					System.out.println("Thank you for using our software! Exiting...");
+					break;
+				}
+				default:
+				{
+					System.out.println("Invalid option. Please try again.");
+					break;
+				}
 			}
 		}
+		scan.close();
 	}
 }
