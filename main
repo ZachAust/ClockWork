@@ -114,6 +114,72 @@ public class MainClockWork {
 					}
 					break;
 				}
+				case(3):
+				{
+					scan.nextLine();
+					System.out.print("Enter user name: ");
+					String newName = scan.nextLine();
+					System.out.print("Enter starting hours: ");
+					int newHours = scan.nextInt();
+					System.out.print("How many skills does this user have? ");
+					numOfSkills = scan.nextInt();
+					while(numOfSkills < 0 || numOfSkills > maxNumOfSkills)
+					{
+						System.out.println("Invalid number of skills requested. Try again.");
+						System.out.print("How many skills does this user have? ");
+						numOfSkills = scan.nextInt();
+					}
+					String skill = "";
+					ArrayList<String> newSkills = new ArrayList<>();
+					scan.nextLine();
+					for(int i = 0; i < numOfSkills; i++)
+					{
+						System.out.print("Enter skill #" + (i+1) + ": ");
+						skill = scan.nextLine();
+						newSkills.add(skill);
+					}
+					users.add(new Member(newName, newHours, newSkills));
+					System.out.println("User " + newName + " has been added!");
+					break;
+				}
+				case(4):
+				{
+					scan.nextLine();
+					System.out.print("What skill are you offering? ");
+					String offeredSkill = scan.nextLine();
+					if(you.findSkill(offeredSkill) == false)
+					{
+						System.out.println("You do not have this skill to offer.");
+						break;
+					}
+					System.out.print("How many hours will you work? ");
+					int hourAmount = scan.nextInt();
+					scan.nextLine();
+					System.out.print("Enter the name of the user you are helping: ");
+					String targetName = scan.nextLine();
+					boolean userFound = false;
+					for(Member user : users)
+					{
+						if(user.getName().equals(targetName))
+						{
+							userFound = true;
+							if(hourAmount > user.getNumOfHours())
+							{
+								System.out.println("User does not have enough hours to pay you.");
+								break;
+							}
+							user.subtractHours(hourAmount);
+							you.addHour(hourAmount);
+							System.out.println("Help provided to " + user.getName() + "! You earned " + hourAmount + " hours.");
+							break;
+						}
+					}
+					if(userFound == false)
+					{
+						System.out.println("User was not found.");
+					}
+					break;
+				}
 				case(5):
 				{
 					System.out.println("Skills: " + you.getSkills());
