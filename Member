@@ -58,6 +58,7 @@ public class Member {
 	public boolean findSkill(String skillAsked)
 	{
 		skillAsked = skillAsked.toLowerCase();
+		skillAsked = skillAsked.trim();
 		for(String skill : skills)
 		{
 			if((skill.toLowerCase()).equals(skillAsked))
